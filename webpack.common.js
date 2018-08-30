@@ -36,7 +36,7 @@ webpackConfig.module.rules = [
     use: {
       loader: 'file-loader',
       options: {
-        publicPath: 'assets/',
+        publicPath: './src/assets/',
       },
     },
   },

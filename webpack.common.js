@@ -20,7 +20,7 @@ webpackConfig.output = {
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
     title: 'React App',
-    template: `${__dirname}/src/index.html`
+    template: `${__dirname}/src/index.html`,
   }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),
@@ -33,7 +33,12 @@ webpackConfig.module = {};
 webpackConfig.module.rules = [
   {
     test: /\.(png|gif|svg|jpg)$/,
-    use: ['file-loader'],
+    use: {
+      loader: 'file-loader',
+      options: {
+        publicPath: 'assets/',
+      },
+    },
   },
   {
     test: /\.js$/,

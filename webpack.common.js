@@ -33,12 +33,9 @@ webpackConfig.module = {};
 webpackConfig.module.rules = [
   {
     test: /\.(png|gif|svg|jpg)$/,
-    use: {
-      loader: 'file-loader',
-      options: {
-        publicPath: 'assets/',
-      },
-    },
+    use: [
+      'file-loader',
+    ],
   },
   {
     test: /\.js$/,

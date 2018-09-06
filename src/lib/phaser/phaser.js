@@ -125,7 +125,7 @@ function create() {
     score += 10;
     scoreText.setText('Score: ' + score);
 
-    if (stars.countActive(true) === 0) {
+    if (stars.countActive(true) !== 0) {
       stars.children.iterate(function (child) {
         child.enableBody(true, child.x, 0, true, true);
       });
